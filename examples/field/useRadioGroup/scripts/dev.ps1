@@ -3,4 +3,4 @@ $env:DISABLE_ESLINT_PLUGIN="true"
 
 yarn --dev
 
-yarn start_win
+# yarn start_win
