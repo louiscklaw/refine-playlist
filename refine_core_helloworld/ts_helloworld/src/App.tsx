@@ -8,7 +8,7 @@ import dataProvider from "@pankod/refine-simple-rest";
 import { PostList, PostShow, PostEdit, PostCreate } from "pages/posts";
 import { Layout } from "components/Layout";
 
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -32,6 +32,10 @@ export const App: React.FC = () => {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/" element={<Main />}>
             <Route path="dashboard" element={<Home />} />
+            {/* <Route path="tables" element={<Tables />} /> */}
+            {/* <Route path="billing" element={<Billing />} /> */}
+            {/* <Route path="profile" element={<Profile />} /> */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </div>
