@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 import Tables from "./pages/Tables";
 import Billing from "./pages/Billing";
 import Profile from "./pages/Profile";
+import Posts from "./pages/Posts";
 
 import Main from "./components/layout/Main";
 
@@ -36,6 +37,7 @@ export const App: React.FC = () => {
           <Route path="/" element={<Main />}>
             <Route path="dashboard" element={<Home />} />
             <Route path="tables" element={<Tables />} />
+            <Route path="posts" element={<Tables />} />
             <Route path="billing" element={<Billing />} />
             <Route path="profile" element={<Profile />} />
           </Route>
