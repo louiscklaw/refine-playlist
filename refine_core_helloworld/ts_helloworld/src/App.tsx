@@ -16,7 +16,7 @@ import Home from "./pages/Home";
 import Tables from "./pages/Tables";
 import Billing from "./pages/Billing";
 import Profile from "./pages/Profile";
-import Posts from "./pages/Posts";
+import TestPosts from "./pages/TestPosts";
 
 import Main from "./components/layout/Main";
 
