@@ -75,6 +75,7 @@ const Main: React.FC = (children) => {
             <Affix>
               <AntHeader className={`${fixed ? "ant-header-fixed" : ""}`}>
                 <Header
+                  placement={true}
                   onPress={openDrawer}
                   name={pathname}
                   subName={pathname}
@@ -87,6 +88,7 @@ const Main: React.FC = (children) => {
           ) : (
             <AntHeader className={`${fixed ? "ant-header-fixed" : ""}`}>
               <Header
+                placement={true}
                 onPress={openDrawer}
                 name={pathname}
                 subName={pathname}
@@ -96,10 +98,7 @@ const Main: React.FC = (children) => {
               />
             </AntHeader>
           )}
-          <Content className="content-ant">{children}</Content>
-          <Footer />
         </Layout>
-
         <Outlet />
       </Layout>
     </>
