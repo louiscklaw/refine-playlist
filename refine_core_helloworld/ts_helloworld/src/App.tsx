@@ -16,7 +16,7 @@ import SignIn from "./pages/SignIn";
 import Home from "./pages/Home";
 import Tables from "./pages/Tables";
 import Billing from "./pages/Billing";
-// import Profile from "./pages/Profile";
+import Profile from "./pages/Profile";
 
 import Main from "./components/layout/Main";
 
@@ -37,7 +37,7 @@ export const App: React.FC = () => {
             <Route path="dashboard" element={<Home />} />
             <Route path="tables" element={<Tables />} />
             <Route path="billing" element={<Billing />} />
-            {/* <Route path="profile" element={<Profile />} /> */}
+            <Route path="profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
