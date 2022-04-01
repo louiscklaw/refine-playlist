@@ -5,7 +5,6 @@ import { Refine } from "@pankod/refine-core";
 import routerProvider from "@pankod/refine-react-router-v6";
 import dataProvider from "@pankod/refine-simple-rest";
 
-import { PostList, PostShow, PostEdit, PostCreate } from "pages/posts";
 import { Layout } from "components/Layout";
 
 import { Routes, Route, Navigate } from "react-router-dom";
