@@ -98,8 +98,11 @@ const Main: React.FC = (children) => {
               />
             </AntHeader>
           )}
+          <Content className="content-ant">
+            <Outlet />
+          </Content>
+          <Footer />
         </Layout>
-        <Outlet />
       </Layout>
     </>
   );
