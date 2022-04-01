@@ -231,7 +231,6 @@ const SignIn: React.FC = () => {
             </Col>
           </Row>
         </Content>
-        SignIn
         <Footer>
           <Menu mode="horizontal">
             <Menu.Item>Company</Menu.Item>

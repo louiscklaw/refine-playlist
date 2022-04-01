@@ -25,7 +25,7 @@ const Main: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <>
-      <Button>helloworld</Button>
+      {/* <Button>helloworld</Button> */}
       <div className="App">
         <Routes>
           <Route path="/sign-up" element={<SignUp />} />
