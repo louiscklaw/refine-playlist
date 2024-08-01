@@ -1,3 +1,3 @@
-npm i -D
+call npm i -D
 
-npm run dev
+call npm run dev
