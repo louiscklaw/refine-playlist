@@ -1,0 +1,24 @@
+###
+http://localhost:3000/v1/restaurant_logs
+
+###
+http://localhost:3000/v1/restaurant_logs/8759e24b488b207892648800
+
+###
+http://localhost:3000/v1/restaurant_logs?_end=12&_start=0
+
+###
+https://api.finefoods.refine.dev/restaurant_logs?_end=12&_start=0
+
+###
+PATCH http://localhost:3000/v1/restaurant_logs/9124f736dd386fe753165597
+Content-Type: application/json
+
+{"title":"🍟 Starters 123231","description":"","isActive":false,"images":[]}
+
+###
+POST http://localhost:3000/v1/restaurant_logs
+Content-Type: application/json
+
+{"title":"🍟 Starters ttt","description":"","isActive":false,"images":[]}
+

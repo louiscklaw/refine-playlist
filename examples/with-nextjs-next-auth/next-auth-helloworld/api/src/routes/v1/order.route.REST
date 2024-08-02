@@ -1,0 +1,94 @@
+PATCH http://localhost:3000/v1/orders/activateCategory/668b53d33859c84a00f8da4f
+
+###
+PATCH http://localhost:3000/v1/orders/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+GET http://localhost:3000/v1/orders?user.id=apple
+# GET http://localhost:3000/v1/orders?user.id=fbb4b8d6c6f9bf026d8fd00a
+
+###
+GET http://localhost:3000/v1/orders?customer.id=f68c5fcdcbd11a233de6e24a
+
+###
+GET http://localhost:3000/v1/orders/66a72d1fa25af12b3e208e58
+
+###
+GET http://localhost:3000/v1/orders
+
+###
+GET http://localhost:3000/helloworld
+
+###
+GET http://localhost:3000/v1/orders?_end=10&_start=0&q=
+
+###
+http://localhost:3000/v1/orders?_end=10&_start=0&q=860707
+
+###
+GET https://api.finefoods.refine.dev/orders?_end=12&_start=0
+
+###
+PATCH http://localhost:3000/v1/orders/81a0fa45643511f9b1466eab
+Content-Type: application/json
+
+{  "status": {
+    "id": "6ffe57edc7e20e07219b6b7a"
+} }
+
+###
+PATCH http://localhost:3000/v1/orders/81a0fa45643511f9b1466eab
+Content-Type: application/json
+
+{  "status": {
+    "id": "814635fdc6bf12140d8a1fd0"
+} }
+
+###
+GET http://localhost:3000/v1/orders/66a75ce59c25350157ce16a3
+
+###
+PATCH http://localhost:3000/v1/orders/66a75ce59c25350157ce16a3
+Content-Type: application/json
+
+{"status":{"text":"Ready","id":"381fde53d3fee3239c1a7985"}}
+
+###
+PATCH http://localhost:3000/v1/orders/66a75ce59c25350157ce16a3
+Content-Type: application/json
+
+{"status":{"text":"Pending","id":"6ffe57edc7e20e07219b6b7a"}}
+
+###
+PATCH http://localhost:3000/v1/orders/66a75ce59c25350157ce16a3
+Content-Type: application/json
+
+{ "status": {"text": "Cancelled", "id": "da7e3f50fa6b2915ddc9b70e"}}
+
+
+###
+POST http://localhost:3000/v1/orders
+Content-Type: application/json
+
+{
+  "orderNumber": 12345,
+  "amount": 51,
+  "addrses": {
+    "text":"",
+    "coordinate":[1234,4321]
+  },
+  "events":[
+    {"date":"1-1-1900", "status":"order created"}
+  ],
+  "status": { "_id": "6ffe57edc7e20e07219b6b7a" },
+  "customer": { "_id": "3386ee4180b566d228f150b7" },
+  "store": { "_id": "a592ec218bd1e5c64e56fe17" },
+  "products": [
+    { "_id": "65dd4967fe508e9ebad619a8" },
+    { "_id": "cfe471971355a3a3d4311e12" },
+    { "_id": "c2447342ea37a1ba068b058b" }
+  ]
+}
+
+###
+GET http://192.168.10.89:3002/order_status/66a7161d749026275783ff2d

@@ -1,0 +1,45 @@
+PATCH http://localhost:3000/v1/advertisements/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/advertisements/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/advertisements
+
+###
+http://localhost:3000/v1/advertisements/dc5ec6ba90bc0560f3978670
+
+###
+http://localhost:3000/v1/advertisements?_end=12&_start=0
+
+
+###
+http://localhost:3000/v1/advertisements?_end=10&_start=0&q=test_caption_3_3
+
+###
+https://api.finefoods.refine.dev/advertisements?_end=12&_start=0
+
+###
+PATCH http://localhost:3000/v1/advertisements/d7dd0cfaa6f55c5c6e931e7a
+Content-Type: application/json
+
+{
+  "caption":"test caption 1_1",
+  "description":"test description 1_1 2",
+  "price":0,
+  "category":null,
+  "isActive":true,
+  "images":[{
+    "name":"WeChat 截圖_20240605162131.png",
+    "size":45620,
+    "type":"image/png",
+    "lastModified":1717575696539,"url":"http://localhost:3000/v1/media/6b07acc9-c017-4d3f-b3ed-43eb0d5c85a7"
+  }
+  ]
+}
+
+###
+POST http://localhost:3000/v1/advertisements
+Content-Type: application/json
+
+{"title":"🍟 Starters ttt","description":"","isActive":false,"images":[]}

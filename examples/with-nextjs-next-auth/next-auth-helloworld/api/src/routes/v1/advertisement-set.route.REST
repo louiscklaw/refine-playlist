@@ -1,0 +1,52 @@
+PATCH http://localhost:3000/v1/advertisement_sets/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/advertisement_sets/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/advertisement_sets
+
+###
+GET http://localhost:3000/v1/advertisement_sets?_end=20&_start=0
+
+###
+http://localhost:3000/v1/advertisement_sets/d32a0d6794b8b886ba0d06f0
+
+###
+http://localhost:3000/v1/advertisement_sets?_end=20&_start=0
+
+###
+http://localhost:3000/v1/advertisement_sets?_end=12&_start=0
+
+###
+https://api.finefoods.refine.dev/advertisement_sets?_end=12&_start=0
+
+###
+PATCH http://localhost:3000/v1/advertisement_sets/94baed2da87afda28cc0cd59
+Content-Type: application/json
+
+{
+  "title":"ad_set_1",
+  "isActive":true,
+  "description":"user logging in",
+  "advertisements":[{
+    "images":
+    [{
+      "url":"https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/coffee.jpg",
+      "thumbnailUrl":"https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/coffee-thumbnail.jpg",
+      "name":"Coffee",
+      "status":"done",
+      "type":"image/jpg",
+      "uid":"22720219-3faa-4646-aca3-fe3a253f0483"
+    }],
+    "caption":"test caption 2_1",
+    "description":"test description 2_1",
+    "id":"dc5ec6ba90bc0560f3978670"
+  }]
+}
+
+###
+POST http://localhost:3000/v1/advertisement_sets
+Content-Type: application/json
+
+{"title":"🍟 Starters ttt","description":"","isActive":false,"images":[]}

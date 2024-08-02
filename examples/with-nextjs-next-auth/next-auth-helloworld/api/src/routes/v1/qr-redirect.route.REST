@@ -1,0 +1,32 @@
+
+###
+http://localhost:3000/v1/qr_redirects
+
+###
+http://localhost:3000/v1/qr_redirects/bddb66220c3e0cd9feb9a754
+
+###
+http://localhost:3000/v1/qr_redirects?_end=12&_start=0
+
+###
+https://api.finefoods.refine.dev/qr_redirects?_end=12&_start=0
+
+
+
+###
+PATCH http://localhost:3000/v1/qr_redirects/227da96376f6572b627ca3bf
+Content-Type: application/json
+
+{
+  "title":"",
+  "description":"<h2>宮廷雞1系列</h2>",
+  "isActive":true,"images":[],"url":"https://www.example.com/received",
+  "redirect_url":"https://www.example.com/redirect",
+  "status":"Available"
+}
+
+###
+POST http://localhost:3000/v1/qr_redirects
+Content-Type: application/json
+
+{"title":"🍟 Starters ttt","description":"","isActive":false,"images":[]}

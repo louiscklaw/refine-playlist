@@ -1,0 +1,16 @@
+PATCH http://localhost:3000/v1/users/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/users/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/users/668bc5ea5951d0580fccd615
+
+###
+http://localhost:3000/v1/users
+
+###
+http://localhost:3000/v1/users?_end=10&_start=0&q=
+
+###
+https://api.finefoods.refine.dev/users?_end=12&_start=0

@@ -1,0 +1,19 @@
+PATCH http://localhost:3000/v1/orderStatuses/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/orderStatuses/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/orderStatuses/6ffe57edc7e20e07219b6b7a
+
+###
+http://localhost:3000/v1/orderStatuses
+
+###
+http://localhost:3000/v1/orderStatuses?_end=10&_start=0&q=
+
+###
+https://api.finefoods.refine.dev/orderStatuses?_end=12&_start=0
+
+###
+http://localhost:3000/v1/orderstatuses?_end=10&_start=0

@@ -1,0 +1,108 @@
+name: next_auth_helloworld
+
+volumes:
+  dbdata:
+
+networks:
+  node-network:
+    driver: bridge
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    command: sleep infinity
+    ports:
+      - 3032:3000
+
+  api:
+    container_name: api
+    # image: 'node:20-bullseye-slim'
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 3031:3000
+    volumes:
+      - ./api:/app
+    working_dir: /app
+    # command: 'sleep infinity'
+    command: "sh ./dev.sh"
+    deploy:
+      resources:
+        reservations:
+          cpus: "0.001"
+    networks:
+      - node-network
+    healthcheck:
+      test: curl --fail http://localhost:3000/v1/helloworld || exit 1
+      interval: 60s
+      retries: 5
+      start_period: 20s
+      timeout: 5s
+    depends_on:
+      - mongodb
+      - redis-service
+    environment:
+      # - NODE_ENV=production
+      - ALLOW_EMPTY_PASSWORD=yes
+      - API_URL=http://192.168.10.89:3031/v1
+
+  mongodb:
+    image: mongo:4.2.1-bionic
+    ports:
+      - 27017:27017
+    volumes:
+      - ./volumes/mongodb/dbdata:/data/db
+    networks:
+      - node-network
+    deploy:
+      resources:
+        reservations:
+          cpus: "0.001"
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+    networks:
+      - node-network
+    deploy:
+      resources:
+        reservations:
+          cpus: "0.001"
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 1025:1025 # smtp port
+      - 8025:8025 # web-client
+    networks:
+      - node-network
+    deploy:
+      resources:
+        reservations:
+          cpus: "0.001"
+
+  redis-service:
+    container_name: redis-database
+    image: "bitnami/redis:latest"
+    ports:
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    deploy:
+      resources:
+        reservations:
+          cpus: "0.001"
+    networks:
+      - node-network

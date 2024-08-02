@@ -1,0 +1,17 @@
+###
+POST http://192.168.10.89:3031/v1/auth/login
+Content-Type: application/json
+
+{
+  "email":"r_user1@example.com",
+  "password":"password1"
+}
+
+###
+POST http://192.168.10.89:3031/v1/auth/login
+Content-Type: application/json
+
+{
+  "email":"fake@example.com",
+  "password":"password1"
+}

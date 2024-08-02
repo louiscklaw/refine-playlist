@@ -1,0 +1,16 @@
+PATCH http://localhost:3000/v1/summaries/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/summaries/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/summaries
+
+###
+http://localhost:3000/v1/summaries/59248c4dae276a021cb296d2
+
+###
+http://localhost:3000/v1/summaries?_end=12&_start=0
+
+###
+https://api.finefoods.refine.dev/summaries?_end=1&_start=0

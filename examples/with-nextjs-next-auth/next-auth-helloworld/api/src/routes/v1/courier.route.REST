@@ -1,0 +1,1618 @@
+PATCH http://localhost:3000/v1/couriers/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/couriers/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/couriers/c448d0ce8de67dd4f2437c27
+
+###
+http://localhost:3000/v1/couriers
+
+###
+http://localhost:3000/v1/couriers?_end=10&_start=0&q=
+
+###
+https://api.finefoods.refine.dev/couriers?_end=12&_start=0
+
+
+###
+POST http://localhost:3000/v1/couriers
+Content-Type: application/json
+
+{
+  "avatar": [
+    {
+      "name": "1546804678262.jpeg",
+      "size": 78518,
+      "type": "image/jpeg",
+      "lastModified": 1715663933174,
+      "url": "http://localhost:3000/v1/media/6a4f8631-b34d-4d61-adeb-b650067e454d"
+    }
+  ],
+  "name": "2",
+  "email": "123@123.com",
+  "gsm": "(852) 912 34 56",
+  "address": "hello hong kong",
+  "store": {
+    "address": {
+      "coordinate": [40.6480924883456, -73.865295796731],
+      "text": "11804 Wyman Knoll, Massapequa, NY 11899"
+    },
+    "isActive": true,
+    "products": [
+      {
+        "isActive": false,
+        "name": "Mushroom Swiss Burger",
+        "description": "A beef patty topped with sautéed mushrooms and Swiss cheese. A rich and savory option.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-4.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-4-thumbnail.jpg",
+            "name": "Mushroom Swiss Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "5f358399-a9f4-49d9-b326-fa792c46d3e6"
+          }
+        ],
+        "price": 10.5,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "65dd4967fe508e9ebad619a8"
+      },
+      {
+        "isActive": true,
+        "name": "Coffee",
+        "description": "Freshly brewed coffee, rich and aromatic.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/coffee.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/coffee-thumbnail.jpg",
+            "name": "Coffee",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "22720219-3faa-4646-aca3-fe3a253f0483"
+          }
+        ],
+        "price": 3,
+        "category": "ef7c41f315b1b64c35cb94f5",
+        "id": "499ed21cb19c984d31e23b94"
+      },
+      {
+        "isActive": true,
+        "name": "Lamb",
+        "description": "Grilled lamb skewers marinated in a Mediterranean spice mix, served with tzatziki sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/lamb.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/lamb-thumbnail.jpg",
+            "name": "Lamb",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b483a0c3-15a0-4bdc-9bb8-d998ddeaac42"
+          }
+        ],
+        "price": 20,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "d68e0da0cbffdbe073a87bf9"
+      },
+      {
+        "isActive": true,
+        "name": "Crispy Calamari",
+        "description": "Lightly battered and fried to a golden crisp, served with a side of marinara sauce for dipping. A classic appetizer that's perfect for sharing.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/crispy-calamari.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/crispy-calamari-thumbnail.jpg",
+            "name": "Crispy Calamari",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "bc35392b-5126-4fe9-b4a0-28f5398d6b40"
+          }
+        ],
+        "price": 12,
+        "category": "9124f736dd386fe753165597",
+        "id": "fc5fbc19fccfc380ec7b39e7"
+      },
+      {
+        "isActive": false,
+        "name": "Bruschetta",
+        "description": "Chopped fresh tomatoes with garlic, basil, olive oil, and vinegar, served on toasted slices of bread.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/bruschetta.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/bruschetta-thumbnail.jpg",
+            "name": "Bruschetta",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "809668ea-6c23-416e-948a-a362e212fc59"
+          }
+        ],
+        "price": 7,
+        "category": "9124f736dd386fe753165597",
+        "id": "01337f5c00647634e8cef670"
+      },
+      {
+        "isActive": true,
+        "name": "Hawaiian Pizza",
+        "description": "A tropical treat topped with ham, pineapple, and mozzarella cheese.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/hawaiian-pizza.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/hawaiian-pizza-thumbnail.jpg",
+            "name": "Hawaiian Pizza",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "577eec59-f374-4d32-be2a-c73bff460ffe"
+          }
+        ],
+        "price": 14.5,
+        "category": "30b6a1eb8fe0820602d5caa7",
+        "id": "cfe471971355a3a3d4311e12"
+      },
+      {
+        "isActive": false,
+        "name": "Ravioli",
+        "description": "Pillow-shaped pasta filled with cheese, meat, or vegetables, served with a sauce of your choice.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-7.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-7-thumbnail.jpg",
+            "name": "Ravioli",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "4ff2724b-f6dc-4063-9c5a-053aa224bb09"
+          }
+        ],
+        "price": 14.5,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "dd96e49ee46a18b8b7cf4b8a"
+      },
+      {
+        "isActive": false,
+        "name": "Chicken Parmesan",
+        "description": "Breaded chicken breast topped with marinara sauce and melted Parmesan and mozzarella cheese.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-parmesan.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-parmesan-thumbnail.jpg",
+            "name": "Chicken Parmesan",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "e2424dd5-209d-4820-a7db-2fc5e3396962"
+          }
+        ],
+        "price": 15,
+        "category": "f7d21d7bcba3fc350f6cf390",
+        "id": "cf7846602d903f7f1c8aa840"
+      },
+      {
+        "isActive": true,
+        "name": "Caesar Salad",
+        "description": "Crisp romaine lettuce, Parmesan cheese, croutons, and Caesar dressing. A classic favorite.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-1.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-1-thumbnail.jpg",
+            "name": "Caesar Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "121a5767-d61f-4467-9524-07d6dee07e4c"
+          }
+        ],
+        "price": 9,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "c2447342ea37a1ba068b058b"
+      },
+      {
+        "isActive": false,
+        "name": "Cannelloni",
+        "description": "Large pasta tubes filled with meat or cheese, covered in sauce, and baked.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-9.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-9-thumbnail.jpg",
+            "name": "Cannelloni",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "aa3c156d-cd00-4158-a22c-257b3bc0da61"
+          }
+        ],
+        "price": 15.5,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "be1faa8d609783ebc46166b1"
+      },
+      {
+        "isActive": true,
+        "name": "Coke",
+        "description": "Classic Coca-Cola served chilled.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/coke.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/coke-thumbnail.jpg",
+            "name": "Coke",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "23e7b779-ee00-484e-a29a-ff979e1073d6"
+          }
+        ],
+        "price": 2,
+        "category": "e3501e95b388762fc5684c4f",
+        "id": "2f332167214bbb88c37a5ba4"
+      },
+      {
+        "isActive": true,
+        "name": "Fish Burger",
+        "description": "A crispy, breaded fish filet with tartar sauce, lettuce, and tomato. A delightful seafood twist.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-9.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-9-thumbnail.jpg",
+            "name": "Fish Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "66f93530-0154-4cf4-8780-4d59a11d820f"
+          }
+        ],
+        "price": 9.5,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "ee54efca5a21df999743fe93"
+      },
+      {
+        "isActive": true,
+        "name": "BBQ Burger",
+        "description": "Topped with onion rings, cheese, bacon, and smothered in BBQ sauce. It's a sweet and tangy treat.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-5.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-5-thumbnail.jpg",
+            "name": "BBQ Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "a99c5fb1-f258-4145-9221-85157cec79fa"
+          }
+        ],
+        "price": 11,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "a3b57a9976fbe4a7b05c0b24"
+      },
+      {
+        "isActive": true,
+        "name": "Chicken Alfredo",
+        "description": "Grilled chicken breast served over fettuccine pasta tossed in a creamy Alfredo sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-alfredo.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-alfredo-thumbnail.jpg",
+            "name": "Chicken Alfredo",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "86d403b3-5024-4fea-aba6-3f3ebb7092e8"
+          }
+        ],
+        "price": 14.5,
+        "category": "f7d21d7bcba3fc350f6cf390",
+        "id": "d2a9a9d6bb4b625bfd71c57d"
+      },
+      {
+        "isActive": false,
+        "name": "Duck",
+        "description": "Grilled duck breast with a crispy skin, served with a cherry balsamic glaze.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/duck.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/duck-thumbnail.jpg",
+            "name": "Duck",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "708b5eae-98b2-4050-982e-5567447a791d"
+          }
+        ],
+        "price": 21,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "6dbf69f96a37effe66acab9c"
+      },
+      {
+        "isActive": false,
+        "name": "Pepperoni Pizza",
+        "description": "A timeless favorite topped with zesty pepperoni and melted mozzarella cheese.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pepperoni-pizza.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pepperoni-pizza-thumbnail.jpg",
+            "name": "Pepperoni Pizza",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "a942902f-e6b5-48f6-bd70-2ff75b22bd02"
+          }
+        ],
+        "price": 13,
+        "category": "30b6a1eb8fe0820602d5caa7",
+        "id": "5764a3a4f0635b13ad47f6e0"
+      },
+      {
+        "isActive": false,
+        "name": "Tofu",
+        "description": "Marinated tofu steaks, grilled and served with a spicy peanut sauce. A great vegetarian option.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/tofu.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/tofu-thumbnail.jpg",
+            "name": "Tofu",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "e77df354-8e52-4f18-a81e-ae40c4b727fd"
+          }
+        ],
+        "price": 14,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "1442d3915fdda766a41b2870"
+      },
+      {
+        "isActive": false,
+        "name": "Pepsi",
+        "description": "Refreshing Pepsi served ice cold.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pepsi.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pepsi-thumbnail.jpg",
+            "name": "Pepsi",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "0a1a59b5-84e1-4dc7-b70a-96accc2b62bd"
+          }
+        ],
+        "price": 2,
+        "category": "e3501e95b388762fc5684c4f",
+        "id": "f857f31fba455b31d50fa360"
+      },
+      {
+        "isActive": true,
+        "name": "Spinach Artichoke Dip",
+        "description": "A creamy blend of spinach, artichokes, and cheeses, served hot with tortilla chips for dipping.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/spinach.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/spinach-thumbnail.jpg",
+            "name": "Spinach Artichoke Dip",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "ea4eda2f-d101-42b7-befb-d8d5cdd2a681"
+          }
+        ],
+        "price": 10,
+        "category": "9124f736dd386fe753165597",
+        "id": "f98e04befc532cbf05c50f8c"
+      },
+      {
+        "isActive": true,
+        "name": "Donuts",
+        "description": "Soft and fluffy donuts, available in classic sugar, chocolate glazed, and filled varieties.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/donuts.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/donuts-thumbnail.jpg",
+            "name": "Donuts",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "75fbcace-473c-4ac6-8f63-2dd32bcaa253"
+          }
+        ],
+        "price": 2.5,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "1e9a98dec8e90783c3831f7c"
+      },
+      {
+        "isActive": true,
+        "name": "Chicken Marsala",
+        "description": "Chicken breast sautéed with mushrooms in a rich Marsala wine sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-marsala.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-marsala-thumbnail.jpg",
+            "name": "Chicken Marsala",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "61b035ea-758c-4843-bc1c-f6a03515bd67"
+          }
+        ],
+        "price": 16,
+        "category": "f7d21d7bcba3fc350f6cf390",
+        "id": "5077f330336527f3bf65e827"
+      },
+      {
+        "isActive": true,
+        "name": "Pork",
+        "description": "Grilled pork chops seasoned with a savory rub and served with apple compote.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pork.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pork-thumbnail.jpg",
+            "name": "Pork",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "3dedfc33-9b82-4316-aa52-534346c98abd"
+          }
+        ],
+        "price": 16,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "c667d18e8e352ec46bf82b8b"
+      },
+      {
+        "isActive": true,
+        "name": "Chicken Burger",
+        "description": "Grilled or crispy chicken breast with lettuce, tomato, and mayo. Simple and delicious.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-8.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-8-thumbnail.jpg",
+            "name": "Chicken Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "4c0dd783-8e07-4e0f-87e9-3ba391a04597"
+          }
+        ],
+        "price": 9,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "307c904740652add4e3c3179"
+      },
+      {
+        "isActive": false,
+        "name": "Apple Pie",
+        "description": "Classic apple pie with a flaky crust, filled with cinnamon-spiced apples, served with vanilla ice cream.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/apple-pie.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/apple-pie-thumbnail.jpg",
+            "name": "Apple Pie",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "32f912da-595c-4d59-8bfa-c054545ff46e"
+          }
+        ],
+        "price": 6,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "094b5007603745545b1e0445"
+      },
+      {
+        "isActive": true,
+        "name": "Turkey",
+        "description": "Grilled turkey breast, seasoned with herbs, and served with cranberry sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/turkey.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/turkey-thumbnail.jpg",
+            "name": "Turkey",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "29783c22-b788-4250-aa0b-608720a2cc51"
+          }
+        ],
+        "price": 15,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "9da2111009ac3ee625b3602e"
+      },
+      {
+        "isActive": true,
+        "name": "Vegetarian Pizza",
+        "description": "A colorful combination of fresh vegetables such as bell peppers, onions, olives, and mushrooms.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/vegetarian-pizza.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/vegetarian-pizza-thumbnail.jpg",
+            "name": "Vegetarian Pizza",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "87bd35c7-68d6-4b87-88fe-24e79bb3bf9d"
+          }
+        ],
+        "price": 14,
+        "category": "30b6a1eb8fe0820602d5caa7",
+        "id": "dae0c5627852f33380db4751"
+      },
+      {
+        "isActive": false,
+        "name": "Nicoise Salad",
+        "description": "Tuna, green beans, potatoes, eggs, olives, and tomatoes over greens. A French bistro classic.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-4.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-4-thumbnail.jpg",
+            "name": "Nicoise Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "cf125fdb-0f78-45ba-8655-19828f3a4f5a"
+          }
+        ],
+        "price": 13,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "9dbf52d75c3bb07f818507f5"
+      },
+      {
+        "isActive": true,
+        "name": "Veggie Burger",
+        "description": "A delicious, plant-based patty served with lettuce, tomato, onion, and pickle. A great option for vegetarians.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-6.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-6-thumbnail.jpg",
+            "name": "Veggie Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "d18042eb-81b2-4897-963d-8bcb7ae28644"
+          }
+        ],
+        "price": 9.5,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "84527b1c38b627c37b1a5a2f"
+      },
+      {
+        "isActive": true,
+        "name": "Tea",
+        "description": "A selection of herbal, black, and green teas.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/tea.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/tea-thumbnail.jpg",
+            "name": "Tea",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "2cfa9a22-6840-480c-97db-0de46ff3306b"
+          }
+        ],
+        "price": 2.5,
+        "category": "ef7c41f315b1b64c35cb94f5",
+        "id": "dfc076c736cd337868a0522a"
+      },
+      {
+        "isActive": false,
+        "name": "Onion Rings",
+        "description": "Thick-cut onions dipped in batter and fried to a crispy golden brown. A crunchy and sweet appetizer.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/onion-ring.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/onion-ring-thumbnail.jpg",
+            "name": "Onion Rings",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b8223b37-e6bc-4000-8bd5-6458d67c1b49"
+          }
+        ],
+        "price": 8,
+        "category": "9124f736dd386fe753165597",
+        "id": "75dfa43fd9843565d5f2343e"
+      },
+      {
+        "isActive": true,
+        "name": "Chicken Piccata",
+        "description": "Lightly breaded chicken breast in a zesty lemon and caper sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-piccata.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-piccata-thumbnail.jpg",
+            "name": "Chicken Piccata",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "8c83a04b-a5b2-49bf-9fd0-45dc3324e0b7"
+          }
+        ],
+        "price": 15.5,
+        "category": "f7d21d7bcba3fc350f6cf390",
+        "id": "87d51ee7127a8117e9fb444e"
+      },
+      {
+        "isActive": true,
+        "name": "Bacon Cheeseburger",
+        "description": "Our Cheeseburger made even better with crispy bacon strips. For those who love a smoky flavor with their meal.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-3.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-3-thumbnail.jpg",
+            "name": "Bacon Cheeseburger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "91242090-62c6-4236-857c-e4064a88c5b6"
+          }
+        ],
+        "price": 10,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "9bb12a182b2d6dad3bd0934f"
+      },
+      {
+        "isActive": false,
+        "name": "Garlic Bread",
+        "description": "Warm, buttery bread seasoned with garlic and herbs, toasted to perfection.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/garlic-bread.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/garlic-bread-thumbnail.jpg",
+            "name": "Garlic Bread",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "2c571353-d3f9-4d11-a16d-d7f0919e21e0"
+          }
+        ],
+        "price": 6,
+        "category": "9124f736dd386fe753165597",
+        "id": "e7c25468feeceff997d1157a"
+      },
+      {
+        "isActive": true,
+        "name": "Chef Salad",
+        "description": "A mix of greens topped with ham, turkey, cheese, tomatoes, cucumbers, and eggs. A meal in itself.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-7.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-7-thumbnail.jpg",
+            "name": "Chef Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "2fccccda-c657-4a39-9948-4f7dd7da366e"
+          }
+        ],
+        "price": 12,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "1f653da53be00dc9716ac153"
+      },
+      {
+        "isActive": false,
+        "name": "Potato Skins",
+        "description": "Crispy potato halves topped with melted cheese, crispy bacon, and green onions. Served with a side of sour cream.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/potato-skins.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/potato-skins-thumbnail.jpg",
+            "name": "Potato Skins",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "feb0be2c-a79b-4a16-a01e-e51ceaff1dfd"
+          }
+        ],
+        "price": 9,
+        "category": "9124f736dd386fe753165597",
+        "id": "c2d3128c1d0c8e5c92bd9779"
+      },
+      {
+        "isActive": false,
+        "name": "Turkey Burger",
+        "description": "A lean, seasoned turkey patty with avocado, lettuce, tomato, and onion. A lighter, yet flavorful choice.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-7.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-7-thumbnail.jpg",
+            "name": "Turkey Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "36227b99-b90c-48a4-abd3-888fc65da560"
+          }
+        ],
+        "price": 9.5,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "e1c4ea0d88b84fe8d1d95daa"
+      },
+      {
+        "isActive": true,
+        "name": "Ice Cream",
+        "description": "Your choice of vanilla, chocolate, or strawberry ice cream, served with whipped cream and a cherry on top.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/ice-cream.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/ice-cream-thumbnail.jpg",
+            "name": "Ice Cream",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "8b50dc30-fef5-4918-b352-fa0c4eb5f4ee"
+          }
+        ],
+        "price": 4,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "0513dd991a15c2eb81c0c02b"
+      },
+      {
+        "isActive": false,
+        "name": "Salmon",
+        "description": "A succulent piece of salmon, grilled and topped with a lemon dill sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salmon.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salmon-thumbnail.jpg",
+            "name": "Salmon",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "3bba9351-6c2e-4fff-876c-31fd02ec3037"
+          }
+        ],
+        "price": 18,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "b08bccaea7cf1560ff9eb606"
+      },
+      {
+        "isActive": false,
+        "name": "Shrimp",
+        "description": "Skewered and grilled shrimp, seasoned with garlic and herbs, served with a side of cocktail sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/shrimp.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/shrimp-thumbnail.jpg",
+            "name": "Shrimp",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "436c8f52-8980-4c52-9684-77d89d699b73"
+          }
+        ],
+        "price": 17,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "f7910e51cc1d6518425c303e"
+      },
+      {
+        "isActive": true,
+        "name": "Meat Lovers Pizza",
+        "description": "A hearty  pizza topped with pepperoni, sausage, bacon, and ham.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/meat-pizza.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/meat-pizza-thumbnail.jpg",
+            "name": "Meat Lovers Pizza",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "7604abe4-d1b0-408a-b5e9-c04628ec4e12"
+          }
+        ],
+        "price": 16,
+        "category": "30b6a1eb8fe0820602d5caa7",
+        "id": "54821ceb099fc60f5ccb0147"
+      },
+      {
+        "isActive": false,
+        "name": "Chicken",
+        "description": "Grilled chicken breast marinated in herbs and spices, served with a side of vegetables.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-thumbnail.jpg",
+            "name": "Chicken",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "9927b338-46c7-46c4-ab0d-00a5f2d72ad5"
+          }
+        ],
+        "price": 15,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "e2f0275b4b64ef9934c7f344"
+      },
+      {
+        "isActive": true,
+        "name": "Mozzarella Sticks",
+        "description": "Crispy on the outside, gooey on the inside. Served with a robust marinara dipping sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cheese-sticks.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cheese-sticks-thumbnail.jpg",
+            "name": "Mozzarella Sticks",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "ddee6619-a02c-40e6-a3ff-3fe53d9f3d25"
+          }
+        ],
+        "price": 8,
+        "category": "9124f736dd386fe753165597",
+        "id": "b873e585a40ff006806593b2"
+      },
+      {
+        "isActive": false,
+        "name": "Fried Pickles",
+        "description": "Dill pickle slices battered and fried until golden brown. Served with a creamy ranch dressing.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pickles.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pickles-thumbnail.jpg",
+            "name": "Fried Pickles",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "ab1b9905-52a2-47db-9d5d-c9dac0c0febd"
+          }
+        ],
+        "price": 7.5,
+        "category": "9124f736dd386fe753165597",
+        "id": "fdaaced1630f54a2e056837c"
+      },
+      {
+        "isActive": false,
+        "name": "Linguine Pesto",
+        "description": "Thin, flat pasta served with a sauce made from basil, garlic, pine nuts, Parmesan cheese, and olive oil.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-4.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-4-thumbnail.jpg",
+            "name": "Linguine Pesto",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "350acd99-feb9-415d-879b-96af71688052"
+          }
+        ],
+        "price": 13.5,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "976309abca4d5b05146ead09"
+      },
+      {
+        "isActive": false,
+        "name": "Tiramisu",
+        "description": "Layered Italian dessert made with ladyfingers, coffee, mascarpone cheese, and dusted with cocoa powder.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/tiramisu.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/tiramisu-thumbnail.jpg",
+            "name": "Tiramisu",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "1e88ddca-9604-42d4-9570-f6608a4666b7"
+          }
+        ],
+        "price": 8.5,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "9563b121eedbdd6e012e5072"
+      },
+      {
+        "isActive": false,
+        "name": "Fettuccine Alfredo",
+        "description": "Flat, thick pasta tossed in a rich sauce of butter and Parmesan cheese, creating a creamy and indulgent dish.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-2.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-2-thumbnail.jpg",
+            "name": "Fettuccine Alfredo",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "cbb070c9-52b5-482f-a4aa-b33985f48f3c"
+          }
+        ],
+        "price": 13,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "214d805d1bde4849a6ca93e3"
+      },
+      {
+        "isActive": true,
+        "name": "Caprese Salad",
+        "description": "Slices of mozzarella and tomatoes, fresh basil, and balsamic glaze. A simple, yet flavorful choice.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-6.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-6-thumbnail.jpg",
+            "name": "Caprese Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "040cc84c-124b-4f06-9d43-03f428fc768d"
+          }
+        ],
+        "price": 10,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "3f74da2ee324bdce207c65be"
+      },
+      {
+        "isActive": false,
+        "name": "Pudding",
+        "description": "Smooth and creamy pudding available in chocolate or vanilla flavor, topped with whipped cream.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pudding.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pudding-thumbnail.jpg",
+            "name": "Pudding",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "0dcdf066-718e-4209-a01d-fe85bf66151f"
+          }
+        ],
+        "price": 4.5,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "989bcf5a973f4b48d757374d"
+      },
+      {
+        "isActive": true,
+        "name": "Sprite",
+        "description": "Crisp and refreshing lemon-lime Sprite.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/sprite.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/sprite-thumbnail.jpg",
+            "name": "Sprite",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "05627b2b-1e2e-4264-895b-c4668aaf40f3"
+          }
+        ],
+        "price": 2,
+        "category": "e3501e95b388762fc5684c4f",
+        "id": "79009d725ac4861be4273873"
+      },
+      {
+        "isActive": false,
+        "name": "Cheeseburger",
+        "description": "The Classic Burger topped with your choice of cheese. A gooey, melty delight on every bite.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-2.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-2-thumbnail.jpg",
+            "name": "Cheeseburger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "aaae8ba5-d495-42a2-a3d0-cf5a0057febb"
+          }
+        ],
+        "price": 9,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "a1fdd7f9bd99fe8af60560e0"
+      },
+      {
+        "isActive": true,
+        "name": "Penne Arrabbiata",
+        "description": "Short tube-shaped pasta in a spicy tomato sauce with garlic, chili peppers, and parsley.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-3.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-3-thumbnail.jpg",
+            "name": "Penne Arrabbiata",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "a2a7cbc9-e03f-49c2-b17a-b6bdfbc72645"
+          }
+        ],
+        "price": 12,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "637dc9ff4293615e120a0234"
+      },
+      {
+        "isActive": false,
+        "name": "Impossible Burger",
+        "description": "A plant-based burger that tastes like beef, served with all the classic toppings. Perfect for those who want a meat-free option without compromise.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-10.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-10-thumbnail.jpg",
+            "name": "Impossible Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "418e5eaa-0a4a-435b-b254-82f090d6af7e"
+          }
+        ],
+        "price": 11,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "72a05b4b61349919974eba40"
+      },
+      {
+        "isActive": true,
+        "name": "Hot Chocolate",
+        "description": "Warm and creamy hot chocolate, topped with whipped cream.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/hot-chocolate.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/hot-chocolate-thumbnail.jpg",
+            "name": "Hot Chocolate",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "3f33af18-c1e3-49a9-b5c8-899b102e0766"
+          }
+        ],
+        "price": 3.5,
+        "category": "ef7c41f315b1b64c35cb94f5",
+        "id": "20fcce3adc5be5f9a744fe2c"
+      },
+      {
+        "isActive": false,
+        "name": "Margherita Pizza",
+        "description": "A simple, classic pizza topped with fresh mozzarella, tomato sauce, and basil.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/margherita-pizza.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/margherita-pizza-thumbnail.jpg",
+            "name": "Margherita Pizza",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "03cca179-8c0e-45ca-b166-c661a74ace6b"
+          }
+        ],
+        "price": 12,
+        "category": "30b6a1eb8fe0820602d5caa7",
+        "id": "3d9064a501f67682032f291e"
+      },
+      {
+        "isActive": false,
+        "name": "Cheesecake",
+        "description": "Creamy cheesecake on a graham cracker crust, with a choice of strawberry, blueberry, or raspberry topping.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cheesecake.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cheesecake-thumbnail.jpg",
+            "name": "Cheesecake",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "ec85edc0-b10e-47cd-81dd-82069a2ba4dc"
+          }
+        ],
+        "price": 8,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "ecc02aa51fb02a1409f6615d"
+      },
+      {
+        "isActive": true,
+        "name": "Steak",
+        "description": "A tender and juicy steak, grilled to perfection and seasoned with our special blend of spices.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/steak.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/steak-thumbnail.jpg",
+            "name": "Steak",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "9c145daa-11f3-431c-b1a5-902a37005c29"
+          }
+        ],
+        "price": 22,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "07918b286fb05a5d0bfee039"
+      },
+      {
+        "isActive": true,
+        "name": "Sausage",
+        "description": "Grilled sausages with a mix of spices, served with mustard and sauerkraut.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/sausage.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/sausage-thumbnail.jpg",
+            "name": "Sausage",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "ee9b0ab7-58c6-4d10-8240-ab31f28c8458"
+          }
+        ],
+        "price": 12,
+        "category": "48ce6d1a1ef87339c758621f",
+        "id": "c25fd7b19cb8adc1901ac692"
+      },
+      {
+        "isActive": true,
+        "name": "Classic Burger",
+        "description": "A juicy beef patty with lettuce, tomato, onion, and pickle on a toasted bun. The timeless classic for every burger lover.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-1.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/burger-1-thumbnail.jpg",
+            "name": "Classic Burger",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b7b241cf-2e17-4617-9a94-988dc559092e"
+          }
+        ],
+        "price": 8,
+        "category": "b63681aadf446e6dd155823d",
+        "id": "3d4e36e02dcb2a1b823a9ec3"
+      },
+      {
+        "isActive": true,
+        "name": "Cobb Salad",
+        "description": "A hearty option with mixed greens, chicken, bacon, eggs, avocado, cheese, and tomatoes. Served with your choice of dressing.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-3.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-3-thumbnail.jpg",
+            "name": "Cobb Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "a591df09-7964-4003-a579-fef2a3729adc"
+          }
+        ],
+        "price": 12,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "b1e919ad32403246ba9f08c8"
+      },
+      {
+        "isActive": true,
+        "name": "House Salad",
+        "description": "A blend of fresh greens, tomatoes, cucumbers, onions, and carrots. Served with your choice of dressing.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-8.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-8-thumbnail.jpg",
+            "name": "House Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "d61d8442-4155-4270-8cec-31c055c403cd"
+          }
+        ],
+        "price": 8,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "f927da18a76d6bcabb0491ad"
+      },
+      {
+        "isActive": false,
+        "name": "Lasagna",
+        "description": "Layers of flat pasta sheets alternated with sauce, cheese, and meat or vegetables, baked to perfection.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-6.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-6-thumbnail.jpg",
+            "name": "Lasagna",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "69d4339f-7bf2-4ebb-8229-51fecb80636f"
+          }
+        ],
+        "price": 16,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "f0183100710bffad6cc73ad6"
+      },
+      {
+        "isActive": false,
+        "name": "Edamame",
+        "description": "Steamed young soybeans sprinkled with sea salt. A simple, healthy, and flavorful snack to get your meal started.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/edamame.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/edamame-thumbnail.jpg",
+            "name": "Edamame",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "eec0a8a3-4f41-4ab7-95ca-adb1587fdf45"
+          }
+        ],
+        "price": 5,
+        "category": "9124f736dd386fe753165597",
+        "id": "954a11bcf34ba056784f05a0"
+      },
+      {
+        "isActive": false,
+        "name": "Spinach Salad",
+        "description": "Baby spinach, bacon, eggs, mushrooms, and onions, served with a warm bacon dressing. A savory and satisfying option.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-9.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-9-thumbnail.jpg",
+            "name": "Spinach Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b75689c9-5025-4c91-b1df-42a3f097b297"
+          }
+        ],
+        "price": 11,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "3bdf482c45cf3edaea73211b"
+      },
+      {
+        "isActive": false,
+        "name": "Spaghetti Carbonara",
+        "description": "Classic Italian pasta with a creamy sauce made from eggs, Parmesan cheese, pancetta, and black pepper.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-1.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-1-thumbnail.jpg",
+            "name": "Spaghetti Carbonara",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b041c6f7-78b5-4fc4-9d1a-3b1e88f57b74"
+          }
+        ],
+        "price": 14,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "7fc9395ffc928ed32b50675d"
+      },
+      {
+        "isActive": false,
+        "name": "Waldorf Salad",
+        "description": "Apples, celery, and walnuts, mixed with mayonnaise, on a bed of lettuce. A sweet and crunchy delight.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-5.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-5-thumbnail.jpg",
+            "name": "Waldorf Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b7413d02-c516-4f32-bd5a-b4ce28651463"
+          }
+        ],
+        "price": 11,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "6f4e07b6323b9fe21dd2888f"
+      },
+      {
+        "isActive": true,
+        "name": "Brownie",
+        "description": "Fudgy and rich chocolate brownies with walnuts, served warm with ice cream on top.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/brownie.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/brownie-thumbnail.jpg",
+            "name": "Brownie",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "6ff45a21-646b-435a-bec9-e4d45e8a4954"
+          }
+        ],
+        "price": 5,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "8891d8d49042f0565fe55b94"
+      },
+      {
+        "isActive": true,
+        "name": "Grilled Chicken",
+        "description": "Perfectly grilled chicken breast, marinated in herbs and spices.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-grilled.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-grilled-thumbnail.jpg",
+            "name": "Grilled Chicken",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "f833d42e-630b-4eba-a0a3-d6dbd0b788ef"
+          }
+        ],
+        "price": 13,
+        "category": "f7d21d7bcba3fc350f6cf390",
+        "id": "343d86fc5d92178fd8233d2c"
+      },
+      {
+        "isActive": true,
+        "name": "BBQ Chicken Pizza",
+        "description": "Grilled chicken, red onions, and tangy BBQ sauce, topped with a blend of melted cheeses.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-pizza.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-pizza-thumbnail.jpg",
+            "name": "BBQ Chicken Pizza",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b6920d7a-dfc7-4151-bcdb-d1fe876647f7"
+          }
+        ],
+        "price": 15,
+        "category": "30b6a1eb8fe0820602d5caa7",
+        "id": "d9ab391486c1d3305bf05dd3"
+      },
+      {
+        "isActive": true,
+        "name": "Fried Chicken",
+        "description": "Crispy, golden-brown fried chicken, seasoned with a blend of spices.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-fried.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/chicken-fried-thumbnail.jpg",
+            "name": "Fried Chicken",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "48a89a83-9299-405e-8ee1-3f6e11f0af98"
+          }
+        ],
+        "price": 12,
+        "category": "f7d21d7bcba3fc350f6cf390",
+        "id": "ed270fd18738cd2e7e948cbc"
+      },
+      {
+        "isActive": false,
+        "name": "Rigatoni Bolognese",
+        "description": "Large tube-shaped pasta served with a hearty meat sauce, simmered with tomatoes, onions, and herbs.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-5.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-5-thumbnail.jpg",
+            "name": "Rigatoni Bolognese",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "f7afb0e5-e4d6-4a2a-9396-d81875a61cc1"
+          }
+        ],
+        "price": 15,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "2a65c5ca04889dc371732223"
+      },
+      {
+        "isActive": true,
+        "name": "Tortellini",
+        "description": "Ring-shaped pasta filled with cheese or meat, served in broth or with a sauce.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-8.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-8-thumbnail.jpg",
+            "name": "Tortellini",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "9654542e-f226-4279-abdd-340f7574f329"
+          }
+        ],
+        "price": 13.5,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "fda37d40d23634e754430dd8"
+      },
+      {
+        "isActive": false,
+        "name": "Greek Salad",
+        "description": "Tomatoes, cucumbers, onions, olives, and feta cheese, dressed with olive oil and herbs. A refreshing Mediterranean option.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-2.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-2-thumbnail.jpg",
+            "name": "Greek Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "1e9da992-01a5-4f87-ae8d-aaffcc719e03"
+          }
+        ],
+        "price": 10,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "8ccbbd020fe86b10e10982be"
+      },
+      {
+        "isActive": false,
+        "name": "Fanta",
+        "description": "Fruity and bubbly orange Fanta.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/fanta.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/fanta-thumbnail.jpg",
+            "name": "Fanta",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "6c4df0d4-19c5-4abd-889c-09044e336aa3"
+          }
+        ],
+        "price": 2,
+        "category": "e3501e95b388762fc5684c4f",
+        "id": "796ca257088877e53f4db361"
+      },
+      {
+        "isActive": false,
+        "name": "Pappardelle",
+        "description": "Broad, flat pasta served with a variety of hearty sauces, often meat-based.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-10.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/pasta-10-thumbnail.jpg",
+            "name": "Pappardelle",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "1c61af60-3b74-494d-872e-586dbb4e1654"
+          }
+        ],
+        "price": 14,
+        "category": "72ce56d05af0951566b7b538",
+        "id": "98d4d93183c1c1ef49190c01"
+      },
+      {
+        "isActive": false,
+        "name": "Chocolate Cake",
+        "description": "Rich and moist chocolate layers with creamy chocolate frosting. Every chocolate lover's dream.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cake.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cake-thumbnail.jpg",
+            "name": "Chocolate Cake",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "326f94cd-cdb2-4dc2-b587-90e8abe9c450"
+          }
+        ],
+        "price": 7,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "833aa3afc74a36e4803be2aa"
+      },
+      {
+        "isActive": false,
+        "name": "Cupcake",
+        "description": "Moist cupcakes available in various flavors, topped with rich buttercream frosting.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cupcake.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cupcake-thumbnail.jpg",
+            "name": "Cupcake",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "1faa3d64-f0df-48ea-b7e1-093862be6e9b"
+          }
+        ],
+        "price": 3,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "ebedf017114425103d11b58b"
+      },
+      {
+        "isActive": true,
+        "name": "Cookies",
+        "description": "Freshly baked cookies in a variety of flavors, including chocolate chip, oatmeal raisin, and peanut butter.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cookie.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/cookie-thumbnail.jpg",
+            "name": "Cookies",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "cbb9bf37-d595-4035-b097-4d153c2a4921"
+          }
+        ],
+        "price": 2,
+        "category": "813322a624dfadc4b560f8eb",
+        "id": "fabf0eeee3e5020bacfefa98"
+      },
+      {
+        "isActive": false,
+        "name": "Kale Salad",
+        "description": "Tender kale leaves with quinoa, cranberries, almonds, and a lemon vinaigrette. A nutrient-packed choice.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-10.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/salad-10-thumbnail.jpg",
+            "name": "Kale Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "f946ad94-1cdd-4e31-9af5-8487841a0f28"
+          }
+        ],
+        "price": 10.5,
+        "category": "5844a078f7b8544cee67ac4f",
+        "id": "ba8fff4c25748ef933da74c0"
+      },
+      {
+        "isActive": false,
+        "name": "Caprese Salad",
+        "description": "Fresh slices of mozzarella cheese, ripe tomatoes, and basil leaves, drizzled with a balsamic glaze and extra virgin olive oil. A refreshing start to your meal.",
+        "images": [
+          {
+            "url": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/caprese-salad.jpg",
+            "thumbnailUrl": "https://refine.ams3.cdn.digitaloceanspaces.com/finefoods/caprese-salad-thumbnail.jpg",
+            "name": "Caprese Salad",
+            "status": "done",
+            "type": "image/jpg",
+            "uid": "b0a19359-7110-47c6-b257-94c87793c4b9"
+          }
+        ],
+        "price": 10,
+        "category": "9124f736dd386fe753165597",
+        "id": "f60f203f9131136a513770a8"
+      }
+    ],
+    "title": "Grady Parks",
+    "email": "Maxine_Nitzsche77@gmail.com",
+    "gsm": "(340) 167-1490",
+    "id": "e2b64e7e6690a6be60e9a1ea"
+  },
+  "accountNumber": "cbbbbb",
+  "vehicle": {
+    "engineSize": 471,
+    "model": "Honda CB500F",
+    "vehicleType": "Motorcycle",
+    "color": "Red",
+    "year": 2023,
+    "id": "369ff4045d589cd8593db0a5"
+  },
+  "licensePlate": "z1234"
+}
+
+
+
+###
+PATCH http://localhost:3000/v1/couriers/c448d0ce8de67dd4f2437c27
+Content-Type: application/json
+
+
+{
+  "name": "Nikki Glover",
+  "email": "Ara1@yahoo.com",
+  "gender": "Male",
+  "gsm": "(932) 955-4773",
+  "accountNumber": "3240376525",
+  "licensePlate": "NFI 705",
+  "address": "11477 Kody Road, Massapequa, NY 11343",
+  "store": {
+    "address": {
+      "coordinate": [
+        40.742301895694915,
+        -74.00397602514688
+      ],
+      "text": "11928 Jazlyn Alley, Brooklyn, NY 11990"
+    },
+    "isActive": true,
+    "products": [
+      "65dd4967fe508e9ebad619a8",
+      "499ed21cb19c984d31e23b94",
+      "d68e0da0cbffdbe073a87bf9",
+      "fc5fbc19fccfc380ec7b39e7",
+      "01337f5c00647634e8cef670",
+      "cfe471971355a3a3d4311e12",
+      "dd96e49ee46a18b8b7cf4b8a",
+      "cf7846602d903f7f1c8aa840",
+      "c2447342ea37a1ba068b058b",
+      "be1faa8d609783ebc46166b1",
+      "2f332167214bbb88c37a5ba4",
+      "ee54efca5a21df999743fe93",
+      "a3b57a9976fbe4a7b05c0b24",
+      "d2a9a9d6bb4b625bfd71c57d",
+      "6dbf69f96a37effe66acab9c",
+      "5764a3a4f0635b13ad47f6e0",
+      "1442d3915fdda766a41b2870",
+      "f857f31fba455b31d50fa360",
+      "f98e04befc532cbf05c50f8c",
+      "1e9a98dec8e90783c3831f7c",
+      "5077f330336527f3bf65e827",
+      "c667d18e8e352ec46bf82b8b",
+      "307c904740652add4e3c3179",
+      "094b5007603745545b1e0445",
+      "9da2111009ac3ee625b3602e",
+      "dae0c5627852f33380db4751",
+      "9dbf52d75c3bb07f818507f5",
+      "84527b1c38b627c37b1a5a2f",
+      "dfc076c736cd337868a0522a",
+      "75dfa43fd9843565d5f2343e",
+      "87d51ee7127a8117e9fb444e",
+      "9bb12a182b2d6dad3bd0934f",
+      "e7c25468feeceff997d1157a",
+      "1f653da53be00dc9716ac153",
+      "c2d3128c1d0c8e5c92bd9779",
+      "e1c4ea0d88b84fe8d1d95daa",
+      "0513dd991a15c2eb81c0c02b",
+      "b08bccaea7cf1560ff9eb606",
+      "f7910e51cc1d6518425c303e",
+      "54821ceb099fc60f5ccb0147",
+      "e2f0275b4b64ef9934c7f344",
+      "b873e585a40ff006806593b2",
+      "fdaaced1630f54a2e056837c",
+      "976309abca4d5b05146ead09",
+      "9563b121eedbdd6e012e5072",
+      "214d805d1bde4849a6ca93e3",
+      "3f74da2ee324bdce207c65be",
+      "989bcf5a973f4b48d757374d",
+      "79009d725ac4861be4273873",
+      "a1fdd7f9bd99fe8af60560e0",
+      "637dc9ff4293615e120a0234",
+      "72a05b4b61349919974eba40",
+      "20fcce3adc5be5f9a744fe2c",
+      "3d9064a501f67682032f291e",
+      "ecc02aa51fb02a1409f6615d",
+      "07918b286fb05a5d0bfee039",
+      "c25fd7b19cb8adc1901ac692",
+      "3d4e36e02dcb2a1b823a9ec3",
+      "b1e919ad32403246ba9f08c8",
+      "f927da18a76d6bcabb0491ad",
+      "f0183100710bffad6cc73ad6",
+      "954a11bcf34ba056784f05a0",
+      "3bdf482c45cf3edaea73211b",
+      "7fc9395ffc928ed32b50675d",
+      "6f4e07b6323b9fe21dd2888f",
+      "8891d8d49042f0565fe55b94",
+      "343d86fc5d92178fd8233d2c",
+      "d9ab391486c1d3305bf05dd3",
+      "ed270fd18738cd2e7e948cbc",
+      "2a65c5ca04889dc371732223",
+      "fda37d40d23634e754430dd8",
+      "8ccbbd020fe86b10e10982be",
+      "796ca257088877e53f4db361",
+      "98d4d93183c1c1ef49190c01",
+      "833aa3afc74a36e4803be2aa",
+      "ebedf017114425103d11b58b",
+      "fabf0eeee3e5020bacfefa98",
+      "ba8fff4c25748ef933da74c0",
+      "f60f203f9131136a513770a8"
+    ],
+    "title": "Jacobson Parks",
+    "email": "Ceasar_Russel@hotmail.com",
+    "gsm": "(700) 213-9181",
+    "id": "8778b5e0c9031baddf199482"
+  },
+  "status": {
+    "text": "Offline",
+    "id": "c902f74562fdc6c7273d4c49"
+  },
+  "vehicle": {
+    "engineSize": 175,
+    "model": "Sym Crox 200i",
+    "vehicleType": "Off-Road Scooter",
+    "color": "Green",
+    "year": 2020,
+    "id": "8f3b70c6cb5900844d5781aa"
+  },
+  "avatar": [
+    {
+      "name": "bde5e3a6-905b-451e-b59d-fdf28a15e63d",
+      "percent": 100,
+      "size": 40088,
+      "status": "done",
+      "type": "image/jpeg",
+      "uid": "ed05e601-2435-4276-8515-301e08b00bc6",
+      "url": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/728.jpg"
+    }
+  ],
+  "id": "c448d0ce8de67dd4f2437c27"
+}

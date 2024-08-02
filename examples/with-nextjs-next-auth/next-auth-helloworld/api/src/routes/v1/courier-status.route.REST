@@ -1,0 +1,16 @@
+PATCH http://localhost:3000/v1/courierStatuses/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/courierStatuses/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/courierStatuses/9d830b7a8c9380413e80ff98
+
+###
+http://localhost:3000/v1/courierStatuses
+
+###
+http://localhost:3000/v1/courierStatuses?_end=10&_start=0&q=
+
+###
+https://api.finefoods.refine.dev/courierStatuses?_end=12&_start=0

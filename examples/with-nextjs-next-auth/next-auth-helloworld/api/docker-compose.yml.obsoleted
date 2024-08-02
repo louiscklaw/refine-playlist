@@ -1,0 +1,49 @@
+volumes:
+  dbdata:
+
+networks:
+  node-network:
+    driver: bridge
+
+services:
+  # node-app:
+  #   build: .
+  #   image: node-app
+  #   environment:
+  #     - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on:
+  #     - mongodb
+  #   volumes:
+  #     - .:/usr/src/node-app
+  #   networks:
+  #     - node-network
+
+  mongodb:
+    image: mongo:4.2.1-bionic
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - node-network
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+    networks:
+      - node-network
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - node-network

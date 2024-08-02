@@ -34,22 +34,29 @@ const authOptions = {
       id: 'CredentialsSignIn',
       credentials: {},
       async authorize(credentials: any) {
-        // TODO: Request your API to check credentials
         console.log('CredentialsSignIn', JSON.stringify(credentials, null, 2));
 
-        // check credentials
-        // if not valid return null
-        if (credentials?.['email'] !== 'demo@refine.dev') {
+        try {
+          // TODO: Request your API to check credentials
+          let { email, password } = credentials;
+          const response = await fetch('http://192.168.10.89:3031/v1/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+          });
+          const data = await response.json();
+
+          if (!response.ok) {
+            throw new Error(data?.message);
+          }
+
+          console.log('user found');
+          let { user } = data;
+          return user;
+        } catch (error) {
+          console.log('user not found');
           return null;
         }
-
-        const user: Awaitable<User> = {
-          id: '1',
-          name: 'John Doe',
-          email: 'demo@refine.dev',
-          image: 'https://i.pravatar.cc/300',
-        };
-        return user;
       },
     }),
     CredentialsProvider({

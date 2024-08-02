@@ -1,0 +1,30 @@
+PATCH http://localhost:3000/v1/categories/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/categories/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/categories
+
+###
+http://localhost:3000/v1/categories/72ce56d05af0951566b7b538
+
+###
+http://localhost:3000/v1/categories?_end=12&_start=0
+
+###
+https://api.finefoods.refine.dev/categories?_end=12&_start=0
+
+
+
+###
+PATCH http://localhost:3000/v1/categories/9124f736dd386fe753165597
+Content-Type: application/json
+
+{"title":"🍟 Starters 123231","description":"","isActive":false,"images":[]}
+
+###
+POST http://localhost:3000/v1/categories
+Content-Type: application/json
+
+{"title":"🍟 Starters ttt","description":"","isActive":false,"images":[]}

@@ -1,0 +1,22 @@
+PATCH http://localhost:3000/v1/customers/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/customers/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/customers/91f69be570c418aef8b5809e
+
+###
+http://localhost:3000/v1/customers
+
+###
+http://localhost:3000/v1/customers?_end=10&_start=0&q=
+
+###
+http://localhost:3000/v1/customers?_end=10&_start=0&q=Koby
+
+###
+http://localhost:3000/v1/customers?_end=10&_start=0&q=Pagac
+
+###
+https://api.finefoods.refine.dev/customers?_end=12&_start=0

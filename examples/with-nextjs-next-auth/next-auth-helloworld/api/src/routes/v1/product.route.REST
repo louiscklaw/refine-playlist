@@ -1,0 +1,44 @@
+PATCH http://localhost:3000/v1/products/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://localhost:3000/v1/products/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://localhost:3000/v1/products/6dbf69f96a37effe66acab9c
+
+###
+http://192.168.10.89:3031/v1/products
+
+###
+http://localhost:3000/v1/products?_end=10&_start=0&q=
+
+###
+https://api.finefoods.refine.dev/products?_end=12&_start=0
+
+###
+PATCH http://localhost:3000/v1/products/6dbf69f96a37effe66acab9c
+Content-Type: application/json
+
+{
+  "name": "helloworld_product",
+  "description": "Refreshing Pepsi served ice cold.",
+  "price": 2,
+  "category": {
+    "title": "🍟 cat2",
+    "description": "hello category desc",
+    "isActive": true,
+    "meta": {
+      "hello": "world"
+    },
+    "images": [
+      {
+        "status": ""
+      }
+    ],
+    "id": "668b6c9de5ab265b04e6c7a1"
+  },
+  "isActive": false,
+  "images": [
+    "668b6b9612737336fcf26ef0"
+  ]
+}
