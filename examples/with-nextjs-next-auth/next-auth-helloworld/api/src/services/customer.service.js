@@ -11,6 +11,9 @@ const { Customer } = require('../models');
  * @returns {Promise<Customer>}
  */
 const createCustomer = async (customerBody) => {
+  if (await Customer.isEmailTaken(customerBody.email)) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Email already taken');
+  }
   return Customer.create(customerBody);
 };
 
@@ -55,8 +58,6 @@ const filterByContain = async (containing_text) => {
  * @returns {Promise<Customer>}
  */
 const getCustomerById = async (id) => {
-  let customer = Customer.findById(id);
-
   return Customer.findById(id);
 };
 
@@ -92,6 +93,10 @@ const deleteCustomerById = async (customerId) => {
   return customer;
 };
 
+const getCustomerByEmail = async (email) => {
+  return Customer.findOne({ email });
+};
+
 module.exports = {
   createCustomer,
   queryCustomers,
@@ -100,4 +105,5 @@ module.exports = {
   deleteCustomerById,
   queryCustomersAdvanced,
   filterByContain,
+  getCustomerByEmail,
 };

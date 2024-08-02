@@ -1,22 +1,98 @@
-PATCH http://localhost:3000/v1/customers/activateCategory/66875a8e4c27f31204aea53f
+###
+http://192.168.10.89:3031/v1/customers/helloworld
 
 ###
-PATCH http://localhost:3000/v1/customers/deActivateCategory/66875a8e4c27f31204aea53f
+POST http://192.168.10.89:3031/v1/customers/register
+Content-Type: application/json
+
+{
+  "email":"123@123.com",
+  "password":"Aa1234567"
+}
 
 ###
-http://localhost:3000/v1/customers/91f69be570c418aef8b5809e
+// router.post('/login', validate(authValidation.login), authController.login);
+POST http://192.168.10.89:3031/v1/customers/login
+Content-Type: application/json
+
+{
+  "email":"123@123.com",
+  "password":"Aa1234567"
+}
 
 ###
-http://localhost:3000/v1/customers
+// router.post('/logout', validate(authValidation.logout), authController.logout);
+POST http://192.168.10.89:3031/v1/customers/logout
+Content-Type: application/json
+
+{
+  "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmFjYWRkZTRiYjYyNTA5MjhmNDM3ZTciLCJpYXQiOjE3MjI1OTU0NDYsImV4cCI6MTcyNTE4NzQ0NiwidHlwZSI6InJlZnJlc2gifQ.7PGl8iSn952oRRrg301x70G1rGFH2vyFg7curQUQSNk"
+}
 
 ###
-http://localhost:3000/v1/customers?_end=10&_start=0&q=
+// router.post('/refresh-tokens', validate(authValidation.refreshTokens), authController.refreshTokens);
+POST http://192.168.10.89:3031/v1/customers/refresh-tokens
+Content-Type: application/json
+
+{
+  "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmFjYWRkZTRiYjYyNTA5MjhmNDM3ZTciLCJpYXQiOjE3MjI2MDIwOTQsImV4cCI6MTcyNTE5NDA5NCwidHlwZSI6InJlZnJlc2gifQ.5cUG3TjbzF-HHPPMH-ETMHBCN-BLNP9mRTuIrwRNjOQ"
+}
 
 ###
-http://localhost:3000/v1/customers?_end=10&_start=0&q=Koby
+// router.post('/forgot-password', validate(authValidation.forgotPassword), authController.forgotPassword);
+POST http://192.168.10.89:3031/v1/customers/forgot-password
+Content-Type: application/json
+
+{ "email":"123@123.com" }
 
 ###
-http://localhost:3000/v1/customers?_end=10&_start=0&q=Pagac
+// router.post('/reset-password', validate(authValidation.resetPassword), authController.resetPassword);
+POST http://192.168.10.89:3031/v1/customers/register
+Content-Type: application/json
+
+{
+  "email":"123@12311.com",
+  "password":"Aa1234567"
+}
+
+###
+// router.post('/send-verification-email', auth(), authController.sendVerificationEmail);
+POST http://192.168.10.89:3031/v1/customers/register
+Content-Type: application/json
+
+{
+  "email":"123@12311.com",
+  "password":"Aa1234567"
+}
+
+###
+// router.post('/verify-email', validate(authValidation.verifyEmail), authController.verifyEmail);
+POST http://192.168.10.89:3031/v1/customers/register
+Content-Type: application/json
+
+{
+  "email":"123@12311.com",
+  "password":"Aa1234567"
+}
+
+
+###
+http://192.168.10.89:3031/v1/customers?_end=10&_start=0&q=
+
+###
+http://192.168.10.89:3031/v1/customers?_end=10&_start=0&q=Koby
+
+###
+http://192.168.10.89:3031/v1/customers?_end=10&_start=0&q=Pagac
 
 ###
 https://api.finefoods.refine.dev/customers?_end=12&_start=0
+
+###
+PATCH http://192.168.10.89:3031/v1/customers/activateCategory/66875a8e4c27f31204aea53f
+
+###
+PATCH http://192.168.10.89:3031/v1/customers/deActivateCategory/66875a8e4c27f31204aea53f
+
+###
+http://192.168.10.89:3031/v1/customers/91f69be570c418aef8b5809e

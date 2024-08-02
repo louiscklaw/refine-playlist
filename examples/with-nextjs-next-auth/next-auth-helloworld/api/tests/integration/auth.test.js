@@ -25,7 +25,7 @@ describe('Auth routes', () => {
       newUser = {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
-        password: 'password1',
+        password: '123456',
       };
     });
 
@@ -121,7 +121,7 @@ describe('Auth routes', () => {
       await insertUsers([userOne]);
       const loginCredentials = {
         email: userOne.email,
-        password: 'wrongPassword1',
+        password: 'wrong123456',
       };
 
       const res = await request(app).post('/v1/auth/login').send(loginCredentials).expect(httpStatus.UNAUTHORIZED);

@@ -89,7 +89,7 @@ module.exports = router;
  *             example:
  *               name: fake name
  *               email: fake@example.com
- *               password: password1
+ *               password: 123456
  *               role: user
  *     responses:
  *       "201":
@@ -235,7 +235,7 @@ module.exports = router;
  *             example:
  *               name: fake name
  *               email: fake@example.com
- *               password: password1
+ *               password: 123456
  *     responses:
  *       "200":
  *         description: OK

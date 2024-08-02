@@ -17,7 +17,7 @@ describe('User routes', () => {
       newUser = {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
-        password: 'password1',
+        password: '123456',
         role: 'user',
       };
     });
@@ -484,7 +484,7 @@ describe('User routes', () => {
       const updateBody = {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
-        password: 'newPassword1',
+        password: 'new123456',
       };
 
       const res = await request(app)

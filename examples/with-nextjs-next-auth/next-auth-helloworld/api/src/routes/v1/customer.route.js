@@ -1,112 +1,127 @@
 const express = require('express');
-const auth = require('../../middlewares/auth');
 const validate = require('../../middlewares/validate');
-const Joi = require('joi');
+const authValidation = require('../../validations/auth.validation');
+const authController = require('../../controllers/auth.controller');
+const auth = require('../../middlewares/auth');
 
-const catchAsync = require('../../utils/catchAsync');
+const customerController = require('../../controllers/customer.controller');
 
 const router = express.Router();
 
-const customerValidation = require('../../validations/customer.validation');
-const customerController = require('../../controllers/customer.controller');
-
-// http://192.168.10.89:3031/v1/customers
-// getOrders
-
-// http://192.168.10.89:3031/v1/customers/668584bc3723fa66f0863eda
-router
-  .route('/:customerId')
-  // TODO: validate(customerValidation.getCustomer),
-  .get(customerController.getCustomer)
-  // TODO: auth('manageOrder'), validate(customerValidation.updateCustomer),
-  .patch(customerController.updateCustomer)
-  // TODO: auth('manageCustomer'), validate(customerValidation.deleteCustomer),
-  .delete(customerController.deleteCustomer);
-
-router
-  .route('/')
-  // TODO: validate(customerValidation.getCustomers),
-  .get(customerController.getAll)
-  // TODO: auth('manageCustomer'), validate(customerValidation.createCustomer),
-  .post(customerController.createCustomer);
+router.get('/helloworld', (req, res) => {
+  res.send('Hello World');
+});
+router.post(
+  '/register',
+  // validate(authValidation.register),
+  customerController.register
+);
+router.post(
+  '/login',
+  // validate(authValidation.login),
+  customerController.login
+);
+router.post(
+  '/logout',
+  // validate(authValidation.logout),
+  customerController.logout
+);
+router.post(
+  '/refresh-tokens',
+  // validate(authValidation.refreshTokens),
+  customerController.refreshTokens
+);
+router.post(
+  '/forgot-password',
+  // validate(authValidation.forgotPassword),
+  customerController.forgotPassword
+);
+// router.post('/reset-password', validate(authValidation.resetPassword), authController.resetPassword);
+// router.post('/send-verification-email', auth(), authController.sendVerificationEmail);
+// router.post('/verify-email', validate(authValidation.verifyEmail), authController.verifyEmail);
 
 module.exports = router;
 
 /**
  * @swagger
  * tags:
- *   name: Customers
- *   description: Customer management and retrieval
+ *   name: Auth
+ *   description: Authentication
  */
 
 /**
  * @swagger
- * /customers:
+ * /auth/register:
  *   post:
- *     summary: Create a customer
- *     description: Only admins can create other customers.
- *     tags: [Customers]
- *     security:
- *       - bearerAuth: []
+ *     summary: Register as user
+ *     tags: [Auth]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Customer'
+ *             type: object
+ *             required:
+ *               - name
+ *               - email
+ *               - password
+ *             properties:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 description: must be unique
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 minLength: 8
+ *                 description: At least one number and one letter
+ *             example:
+ *               name: fake name
+ *               email: fake@example.com
+ *               password: 123456
  *     responses:
  *       "201":
  *         description: Created
  *         content:
  *           application/json:
  *             schema:
- *                $ref: '#/components/schemas/Customer'
+ *               type: object
+ *               properties:
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
+ *                 tokens:
+ *                   $ref: '#/components/schemas/AuthTokens'
  *       "400":
  *         $ref: '#/components/responses/DuplicateEmail'
- *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
- *
- *   get:
- *     summary: Get all customers
- *     description: all users can retrieve all customers.
- *     tags: [Customers]
- *     parameters:
- *       - in: query
- *         name: firstName
- *         schema:
- *           type: string
- *         description: First name
- *       - in: query
- *         name: lastName
- *         schema:
- *           type: string
- *         description: Last name
- *       - in: query
- *         name: status
- *         schema:
- *           type: string
- *         description: Status
- *       - in: query
- *         name: sortBy
- *         schema:
- *           type: string
- *         description: sort by query in the form of field:desc/asc (ex. name:asc)
- *       - in: query
- *         name: limit
- *         schema:
- *           type: integer
- *           minimum: 1
- *         default: 10
- *         description: Maximum number of customers
- *       - in: query
- *         name: page
- *         schema:
- *           type: integer
- *           minimum: 1
- *           default: 1
- *         description: Page number
+ */
+
+/**
+ * @swagger
+ * /auth/login:
+ *   post:
+ *     summary: Login
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *               password:
+ *                 type: string
+ *                 format: password
+ *             example:
+ *               email: fake@example.com
+ *               password: 123456
  *     responses:
  *       "200":
  *         description: OK
@@ -115,113 +130,187 @@ module.exports = router;
  *             schema:
  *               type: object
  *               properties:
- *                 results:
- *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/Customer'
- *                 page:
- *                   type: integer
- *                   example: 1
- *                 limit:
- *                   type: integer
- *                   example: 10
- *                 totalPages:
- *                   type: integer
- *                   example: 1
- *                 totalResults:
- *                   type: integer
- *                   example: 1
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
+ *                 tokens:
+ *                   $ref: '#/components/schemas/AuthTokens'
  *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
+ *         description: Invalid email or password
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               code: 401
+ *               message: Invalid email or password
  */
 
 /**
  * @swagger
- * /customers/{id}:
- *   get:
- *     summary: Get a customer
- *     description: Logged in users can fetch only their own customer information. Only admins can fetch other customers.
- *     tags: [Customers]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: Customer id
- *     responses:
- *       "200":
- *         description: OK
- *         content:
- *           application/json:
- *             schema:
- *                $ref: '#/components/schemas/Customer'
- *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
- *       "404":
- *         $ref: '#/components/responses/NotFound'
- *
- *   patch:
- *     summary: Update a customer
- *     description: Logged in users can only update their own information. Only admins can update other customers.
- *     tags: [Customers]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: Customer id
+ * /auth/logout:
+ *   post:
+ *     summary: Logout
+ *     tags: [Auth]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/UpdateCustomer'
+ *             type: object
+ *             required:
+ *               - refreshToken
+ *             properties:
+ *               refreshToken:
+ *                 type: string
+ *             example:
+ *               refreshToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWJhYzUzNDk1NGI1NDEzOTgwNmMxMTIiLCJpYXQiOjE1ODkyOTg0ODQsImV4cCI6MTU4OTMwMDI4NH0.m1U63blB0MLej_WfB7yC2FTMnCziif9X8yzwDEfJXAg
+ *     responses:
+ *       "204":
+ *         description: No content
+ *       "404":
+ *         $ref: '#/components/responses/NotFound'
+ */
+
+/**
+ * @swagger
+ * /auth/refresh-tokens:
+ *   post:
+ *     summary: Refresh auth tokens
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - refreshToken
+ *             properties:
+ *               refreshToken:
+ *                 type: string
+ *             example:
+ *               refreshToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWJhYzUzNDk1NGI1NDEzOTgwNmMxMTIiLCJpYXQiOjE1ODkyOTg0ODQsImV4cCI6MTU4OTMwMDI4NH0.m1U63blB0MLej_WfB7yC2FTMnCziif9X8yzwDEfJXAg
  *     responses:
  *       "200":
  *         description: OK
  *         content:
  *           application/json:
  *             schema:
- *                $ref: '#/components/schemas/Customer'
- *       "400":
- *         $ref: '#/components/responses/DuplicateEmail'
+ *               $ref: '#/components/schemas/AuthTokens'
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
+ */
+
+/**
+ * @swagger
+ * /auth/forgot-password:
+ *   post:
+ *     summary: Forgot password
+ *     description: An email will be sent to reset password.
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *             example:
+ *               email: fake@example.com
+ *     responses:
+ *       "204":
+ *         description: No content
  *       "404":
  *         $ref: '#/components/responses/NotFound'
- *
- *   delete:
- *     summary: Delete a customer
- *     description: Logged in users can delete only themselves. Only admins can delete other customers.
- *     tags: [Customers]
- *     security:
- *       - bearerAuth: []
+ */
+
+/**
+ * @swagger
+ * /auth/reset-password:
+ *   post:
+ *     summary: Reset password
+ *     tags: [Auth]
  *     parameters:
- *       - in: path
- *         name: id
+ *       - in: query
+ *         name: token
  *         required: true
  *         schema:
  *           type: string
- *         description: Customer id
+ *         description: The reset password token
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - password
+ *             properties:
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 minLength: 8
+ *                 description: At least one number and one letter
+ *             example:
+ *               password: 123456
  *     responses:
- *       "200":
+ *       "204":
+ *         description: No content
+ *       "401":
+ *         description: Password reset failed
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               code: 401
+ *               message: Password reset failed
+ */
+
+/**
+ * @swagger
+ * /auth/send-verification-email:
+ *   post:
+ *     summary: Send verification email
+ *     description: An email will be sent to verify email.
+ *     tags: [Auth]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       "204":
  *         description: No content
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
- *       "404":
- *         $ref: '#/components/responses/NotFound'
+ */
+
+/**
+ * @swagger
+ * /auth/verify-email:
+ *   post:
+ *     summary: verify email
+ *     tags: [Auth]
+ *     parameters:
+ *       - in: query
+ *         name: token
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The verify email token
+ *     responses:
+ *       "204":
+ *         description: No content
+ *       "401":
+ *         description: verify email failed
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               code: 401
+ *               message: verify email failed
  */

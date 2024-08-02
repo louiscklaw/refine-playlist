@@ -4,6 +4,21 @@ const userService = require('./user.service');
 const Token = require('../models/token.model');
 const ApiError = require('../utils/ApiError');
 const { tokenTypes } = require('../config/tokens');
+const customerService = require('./customer.service');
+
+/**
+ * Login with username and password
+ * @param {string} email
+ * @param {string} password
+ * @returns {Promise<User>}
+ */
+const loginCustomerWithEmailAndPassword = async (email, password) => {
+  const customer = await customerService.getCustomerByEmail(email);
+  if (!customer || !(await customer.isPasswordMatch(password))) {
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'Incorrect email or password');
+  }
+  return customer;
+};
 
 /**
  * Login with username and password
@@ -25,11 +40,46 @@ const loginUserWithEmailAndPassword = async (email, password) => {
  * @returns {Promise}
  */
 const logout = async (refreshToken) => {
-  const refreshTokenDoc = await Token.findOne({ token: refreshToken, type: tokenTypes.REFRESH, blacklisted: false });
+  const refreshTokenDoc = await Token.findOne({
+    //
+    token: refreshToken,
+    type: tokenTypes.REFRESH,
+    blacklisted: false,
+  });
   if (!refreshTokenDoc) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Not found');
   }
   await refreshTokenDoc.remove();
+};
+
+/**
+ * Refresh auth tokens
+ * @param {string} refreshToken
+ * @returns {Promise<Object>}
+ */
+const refreshCustomerAuth = async (refreshToken) => {
+  try {
+    const refreshTokenDoc = await tokenService.verifyCustomerToken(
+      //
+      refreshToken,
+      tokenTypes.REFRESH
+    );
+    console.log({ refreshTokenDoc });
+
+    // NOTE: temporary using the same token generation logic with user,
+    // dont modify user properties here, take a look into the deeper logic `getCustomerById`
+    const customer = await customerService.getCustomerById(refreshTokenDoc.user);
+    if (!customer) {
+      throw new Error();
+    }
+    console.log({ customer });
+
+    await refreshTokenDoc.remove();
+    return tokenService.generateAuthTokens(customer);
+  } catch (error) {
+    console.log({ error });
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'Please authenticate');
+  }
 };
 
 /**
@@ -47,6 +97,7 @@ const refreshAuth = async (refreshToken) => {
     await refreshTokenDoc.remove();
     return tokenService.generateAuthTokens(user);
   } catch (error) {
+    console.log({ error });
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Please authenticate');
   }
 };
@@ -91,9 +142,11 @@ const verifyEmail = async (verifyEmailToken) => {
 };
 
 module.exports = {
+  loginCustomerWithEmailAndPassword,
   loginUserWithEmailAndPassword,
   logout,
   refreshAuth,
+  refreshCustomerAuth,
   resetPassword,
   verifyEmail,
 };

@@ -122,6 +122,10 @@ const App = ({ children, defaultMode }: React.PropsWithChildren<AppProps>) => {
             authProvider={authProvider}
             resources={[
               {
+                name: 'customers',
+                create: '/customers/create',
+              },
+              {
                 name: 'blog_posts',
                 list: '/blog-posts',
                 create: '/blog-posts/create',

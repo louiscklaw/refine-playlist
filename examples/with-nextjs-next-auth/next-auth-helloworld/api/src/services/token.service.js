@@ -6,6 +6,7 @@ const userService = require('./user.service');
 const { Token } = require('../models');
 const ApiError = require('../utils/ApiError');
 const { tokenTypes } = require('../config/tokens');
+const customerService = require('./customer.service');
 
 /**
  * Generate token
@@ -61,6 +62,21 @@ const verifyToken = async (token, type) => {
 };
 
 /**
+ * Verify token and return token doc (or throw an error if it is not valid)
+ * @param {string} token
+ * @param {string} type
+ * @returns {Promise<Token>}
+ */
+const verifyCustomerToken = async (token, type) => {
+  const payload = jwt.verify(token, config.jwt.secret);
+  const tokenDoc = await Token.findOne({ token, type, user: payload.sub, blacklisted: false });
+  if (!tokenDoc) {
+    throw new Error('Token not found');
+  }
+  return tokenDoc;
+};
+
+/**
  * Generate auth tokens
  * @param {User} user
  * @returns {Promise<Object>}
@@ -102,6 +118,24 @@ const generateResetPasswordToken = async (email) => {
 };
 
 /**
+ * Generate reset password token
+ * @param {string} email
+ * @returns {Promise<string>}
+ */
+const generateCustomerResetPasswordToken = async (email) => {
+  // const user = await userService.getUserByEmail(email);
+  const customer = await customerService.getCustomerByEmail(email);
+  console.log({ customer });
+  if (!customer) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'No customer found with this email');
+  }
+  const expires = moment().add(config.jwt.resetPasswordExpirationMinutes, 'minutes');
+  const resetPasswordToken = generateToken(customer.id, expires, tokenTypes.RESET_PASSWORD);
+  await saveToken(resetPasswordToken, customer.id, expires, tokenTypes.RESET_PASSWORD);
+  return resetPasswordToken;
+};
+
+/**
  * Generate verify email token
  * @param {User} user
  * @returns {Promise<string>}
@@ -119,5 +153,7 @@ module.exports = {
   verifyToken,
   generateAuthTokens,
   generateResetPasswordToken,
+  verifyCustomerToken,
   generateVerifyEmailToken,
+  generateCustomerResetPasswordToken,
 };

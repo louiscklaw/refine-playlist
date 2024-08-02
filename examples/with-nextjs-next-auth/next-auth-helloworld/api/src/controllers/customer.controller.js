@@ -1,95 +1,60 @@
 const httpStatus = require('http-status');
-const pick = require('../utils/pick');
-const ApiError = require('../utils/ApiError');
 const catchAsync = require('../utils/catchAsync');
+const { authService, userService, tokenService, emailService, customerService } = require('../services');
 
-const { customerService } = require('../services');
-
-const createCustomer = catchAsync(async (req, res) => {
+const register = catchAsync(async (req, res) => {
   const customer = await customerService.createCustomer(req.body);
-  res.status(httpStatus.CREATED).send(customer);
+  const tokens = await tokenService.generateAuthTokens(customer);
+  res.status(httpStatus.CREATED).send({ customer, tokens });
 });
 
-const getCustomers = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['userRel', 'statusId', 'storeId', 'courierId']);
-  const options = pick(req.query, ['sortBy', 'limit', 'page']);
-  const result = await customerService.queryCustomers(filter, options);
-  res.send(result);
+const login = catchAsync(async (req, res) => {
+  const { email, password } = req.body;
+  console.log({ email, password });
+  const customer = await authService.loginCustomerWithEmailAndPassword(email, password);
+  const tokens = await tokenService.generateAuthTokens(customer);
+  res.send({ customer, tokens });
 });
 
-const getCustomer = catchAsync(async (req, res) => {
-  const customer = await customerService.getCustomerById(req.params.customerId);
-  if (!customer) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Customer not found');
-  }
-  res.send(customer);
-});
-
-const updateCustomer = catchAsync(async (req, res) => {
-  const customer = await customerService.updateCustomerById(req.params.customerId, req.body);
-  res.send(customer);
-});
-
-const deleteCustomer = catchAsync(async (req, res) => {
-  await customerService.deleteCustomerById(req.params.customerId);
+const logout = catchAsync(async (req, res) => {
+  await authService.logout(req.body.refreshToken);
   res.status(httpStatus.NO_CONTENT).send();
 });
 
-const getAll1 = catchAsync(async (req, res) => {
-  let customers = [];
-  let count = 0;
-
-  const { _end, _start, q } = req.query;
-  const result = await customerService.queryCustomersAdvanced({ _end, _start, q });
-  res.send(result);
+const refreshTokens = catchAsync(async (req, res) => {
+  const tokens = await authService.refreshCustomerAuth(req.body.refreshToken);
+  res.send({ ...tokens });
 });
 
-const getAll = catchAsync(async (req, res) => {
-  let customers = [];
-  let count = 0;
-
-  if (Object.keys(req.query).includes('customer.id')) {
-    // console.log('query customer id');
-    // orders = await customerService. queryOrdersByUserId(req.query);
-    // NOTE: obsoleted path
-  } else if (Object.keys(req.query).includes('q') && req.query.q != '') {
-    let result = await customerService.filterByContain(req.query.q);
-    orders = result;
-    count = orders.length;
-
-    console.log('filter order by contain' + req.query.q);
-  } else {
-    console.log('default');
-    const { _end, _start, q } = req.query;
-    let result = await customerService.queryCustomersAdvanced({ _end, _start, q });
-    customers = result.customers;
-    count = result.count;
-  }
-
-  res.header('Access-Control-Expose-Headers', 'x-total-count');
-  res.setHeader('X-Total-Count', count);
-  res.send(customers);
+const forgotPassword = catchAsync(async (req, res) => {
+  const resetPasswordToken = await tokenService.generateCustomerResetPasswordToken(req.body.email);
+  await emailService.sendResetPasswordEmail(req.body.email, resetPasswordToken);
+  res.status(httpStatus.NO_CONTENT).send();
 });
 
-const getCustomersWithSorted = catchAsync(async (req, res) => {
-  const { _end, _start, q } = req.query;
-  const result = await customerService.queryCustomersAdvanced({ _end, _start, q });
-  res.send(result);
+const resetPassword = catchAsync(async (req, res) => {
+  await authService.resetPassword(req.query.token, req.body.password);
+  res.status(httpStatus.NO_CONTENT).send();
 });
 
-const getCustomersWithStatusText = catchAsync(async (req, res) => {
-  const { _end, _start, q } = req.query;
-  const result = await customerService.queryCustomersAdvanced({ _end, _start, q });
-  res.send(result);
+const sendVerificationEmail = catchAsync(async (req, res) => {
+  const verifyEmailToken = await tokenService.generateVerifyEmailToken(req.user);
+  await emailService.sendVerificationEmail(req.user.email, verifyEmailToken);
+  res.status(httpStatus.NO_CONTENT).send();
+});
+
+const verifyEmail = catchAsync(async (req, res) => {
+  await authService.verifyEmail(req.query.token);
+  res.status(httpStatus.NO_CONTENT).send();
 });
 
 module.exports = {
-  createCustomer,
-  getCustomers,
-  getCustomer,
-  updateCustomer,
-  deleteCustomer,
-  getAll,
-  getCustomersWithSorted,
-  getCustomersWithStatusText,
+  register,
+  login,
+  logout,
+  refreshTokens,
+  forgotPassword,
+  resetPassword,
+  sendVerificationEmail,
+  verifyEmail,
 };
