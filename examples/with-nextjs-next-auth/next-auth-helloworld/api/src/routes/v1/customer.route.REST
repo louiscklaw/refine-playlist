@@ -47,11 +47,10 @@ Content-Type: application/json
 
 ###
 // router.post('/reset-password', validate(authValidation.resetPassword), authController.resetPassword);
-POST http://192.168.10.89:3031/v1/customers/register
+POST http://192.168.10.89:3031/v1/customers/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmFjZGJhNzdlM2QxMzIzYzE1Mzg4NTUiLCJpYXQiOjE3MjI2MDc5NjQsImV4cCI6MTcyMjYwODU2NCwidHlwZSI6InJlc2V0UGFzc3dvcmQifQ.VsT_lX6CCXiUSmWn0MryHHNBPW52F-DFkyqkGb90EPY
 Content-Type: application/json
 
 {
-  "email":"123@12311.com",
   "password":"Aa1234567"
 }
 

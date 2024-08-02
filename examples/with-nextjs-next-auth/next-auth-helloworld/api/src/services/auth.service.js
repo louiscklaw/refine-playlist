@@ -118,6 +118,28 @@ const resetPassword = async (resetPasswordToken, newPassword) => {
     await userService.updateUserById(user.id, { password: newPassword });
     await Token.deleteMany({ user: user.id, type: tokenTypes.RESET_PASSWORD });
   } catch (error) {
+    console.log({ error });
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'Password reset failed');
+  }
+};
+
+/**
+ * Reset password
+ * @param {string} resetPasswordToken
+ * @param {string} newPassword
+ * @returns {Promise}
+ */
+const resetCustomerPassword = async (resetPasswordToken, newPassword) => {
+  try {
+    const resetPasswordTokenDoc = await tokenService.verifyToken(resetPasswordToken, tokenTypes.RESET_PASSWORD);
+    const customer = await customerService.getCustomerById(resetPasswordTokenDoc.user);
+    if (!customer) {
+      throw new Error();
+    }
+    await customerService.updateCustomerById(customer.id, { password: newPassword });
+    await Token.deleteMany({ user: customer.id, type: tokenTypes.RESET_PASSWORD });
+  } catch (error) {
+    console.log({ error });
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Password reset failed');
   }
 };
@@ -149,4 +171,5 @@ module.exports = {
   refreshCustomerAuth,
   resetPassword,
   verifyEmail,
+  resetCustomerPassword,
 };

@@ -36,7 +36,12 @@ router.post(
   // validate(authValidation.forgotPassword),
   customerController.forgotPassword
 );
-// router.post('/reset-password', validate(authValidation.resetPassword), authController.resetPassword);
+router.post(
+  '/reset-password',
+  //
+  validate(authValidation.resetPassword),
+  customerController.resetPassword
+);
 // router.post('/send-verification-email', auth(), authController.sendVerificationEmail);
 // router.post('/verify-email', validate(authValidation.verifyEmail), authController.verifyEmail);
 
