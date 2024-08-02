@@ -17,18 +17,9 @@ export default async function Login() {
       forgotPasswordLink={false}
       rememberMe={false}
       providers={[
-        {
-          name: "google",
-          label: "with Google",
-        },
-        {
-          name: "auth0",
-          label: "with Auth0",
-        },
-        {
-          name: "keycloak",
-          label: "with Keycloak",
-        },
+        { name: "google", label: "with Google" },
+        { name: "auth0", label: "with Auth0" },
+        { name: "keycloak", label: "with Keycloak" },
       ]}
     />
   );

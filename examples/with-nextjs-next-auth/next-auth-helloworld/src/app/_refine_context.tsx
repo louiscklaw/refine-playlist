@@ -17,7 +17,7 @@ type RefineContextProps = {
 };
 
 export const RefineContext = (
-  props: React.PropsWithChildren<RefineContextProps>,
+  props: React.PropsWithChildren<RefineContextProps>
 ) => {
   return (
     <SessionProvider>
@@ -129,7 +129,7 @@ const App = ({ children, defaultMode }: React.PropsWithChildren<AppProps>) => {
 
   return (
     <>
-      <GitHubBanner />
+      {/* <GitHubBanner /> */}
       <RefineKbarProvider>
         <ColorModeContextProvider defaultMode={defaultMode}>
           <Refine
